@@ -1,0 +1,152 @@
+/* src/components/Game.css */
+
+/* General body styling */
+body {
+    background-color: #0f0f0f; /* Dark background */
+    color: #e0e0e0; /* Light text color for contrast */
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Button styling */
+  button {
+    background: linear-gradient(145deg, #1e1e1e, #333);
+    border: 2px solid #555;
+    border-radius: 5px;
+    color: #00ff00; /* Neon green text color */
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 10px 20px;
+    text-shadow: 0 0 5px #00ff00; /* Neon glow effect */
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(145deg, #333, #1e1e1e);
+    box-shadow: 0 0 10px #00ff00;
+  }
+  
+  /* Selected button styling */
+  button.selected {
+    background-color: #00ff00; /* Neon green background */
+    color: #0f0f0f; /* Dark text color for contrast */
+    box-shadow: 0 0 15px #00ff00;
+  }
+  
+/* Styling for the disabled state */
+button:disabled {
+    background: #333; /* Darker background color */
+    border: 2px solid #666; /* Lighter border color */
+    color: #555; /* Muted text color */
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
+    text-shadow: none; /* Remove text shadow */
+    opacity: 0.6; /* Reduce opacity */
+  }
+  
+  button:disabled:hover {
+    background: #333; /* Ensure the background does not change on hover */
+    box-shadow: none; /* Remove hover effect */
+  }
+
+  /* Choices container */
+  .choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  /* Heading styling */
+  h1, h2, .primedirective {
+    color: #ff007f; /* Neon pink color */
+    text-shadow: 0 0 10px #ff007f;
+    text-align: center;
+  }
+  
+  /* Additional styling for better layout */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+
+  span.round-bold {
+    font-weight: bold;
+    color: red;
+  }
+
+  span.round-normal {
+    font-weight: bold;
+  }
+
+  /* Target number styling */
+.target-number {
+    font-family: 'Orbitron', sans-serif; /* Use a futuristic font */
+    font-size: 3rem; /* Large font size for prominence */
+    color: #00ff00; /* Neon green color */
+    text-shadow: 0 0 15px #00ff00, 0 0 5px #00ff00; /* Neon glow effect */
+    margin: 20px 0; /* Spacing around the target number */
+    text-align: center;
+    width: fit-content;
+  }
+
+  @keyframes pulse {
+    0% { text-shadow: 0 0 15px #00ff00, 0 0 5px #00ff00; }
+    50% { text-shadow: 0 0 25px #00ff00, 0 0 10px #00ff00; }
+    100% { text-shadow: 0 0 15px #00ff00, 0 0 5px #00ff00; }
+  }
+  
+  .target-number {
+    animation: pulse 1.5s infinite;
+  }
+
+  .target-number {
+    border: 2px solid #00ff00;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 255, 0, 0.1); /* Light neon background */
+  }
+
+  .centered {
+    display: flex;
+    justify-content: center;
+  }
+
+/* Container for the progress bar */
+.progress-container {
+    width: 70%;
+    background-color: #333; /* Dark background for the container */
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+    height: 20px; /* Height of the progress bar */
+    position: relative;
+  }
+  
+  /* Full gradient background */
+  .progress-background {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, red, yellow, green); /* Gradient from red to green */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Progress bar itself */
+  .progress-bar {
+    height: 100%;
+    width: 0; /* Start with 0 width and increase based on remaining time */
+    background: black; /* Transparent background to show gradient behind */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  li.nodot {
+    display: block;
+  } 
